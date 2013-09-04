@@ -6,11 +6,93 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		5BB15B2E17D7A04900F15291 /* index.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = index.php; sourceTree = "<group>"; };
+		5BB15B2F17D7A0D400F15291 /* settings.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = settings.ini; sourceTree = "<group>"; };
+		5BB15B3717D7A5E500F15291 /* index */ = {isa = PBXFileReference; lastKnownFileType = text; name = index; path = "content/posts/This_is_a_post!/index"; sourceTree = SOURCE_ROOT; };
+		5BB15B3817D7A5E500F15291 /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = meta.ini; path = "content/posts/This_is_a_post!/meta.ini"; sourceTree = SOURCE_ROOT; };
+		5BB15B3C17D7A77C00F15291 /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5BB15B3D17D7A77C00F15291 /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5BB15B3F17D7A77C00F15291 /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5BB15B4017D7A77C00F15291 /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5BB15B4217D7A83600F15291 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
+		5BB15B4417D7AA2600F15291 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		5BB15B4517D7CA4C00F15291 /* misc.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = misc.php; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		5BB15B2717D7A04000F15291 = {
 			isa = PBXGroup;
 			children = (
+				5BB15B4417D7AA2600F15291 /* style.css */,
+				5BB15B2E17D7A04900F15291 /* index.php */,
+				5BB15B4517D7CA4C00F15291 /* misc.php */,
+				5BB15B2F17D7A0D400F15291 /* settings.ini */,
+				5BB15B3017D7A55100F15291 /* content */,
 			);
+			sourceTree = "<group>";
+		};
+		5BB15B3017D7A55100F15291 /* content */ = {
+			isa = PBXGroup;
+			children = (
+				5BB15B4117D7A83600F15291 /* media */,
+				5BB15B3117D7A55100F15291 /* posts */,
+				5BB15B3317D7A55100F15291 /* pages */,
+			);
+			path = content;
+			sourceTree = "<group>";
+		};
+		5BB15B3117D7A55100F15291 /* posts */ = {
+			isa = PBXGroup;
+			children = (
+				5BB15B3217D7A55100F15291 /* This_is_a_post! */,
+			);
+			name = posts;
+			path = "blog posts";
+			sourceTree = "<group>";
+		};
+		5BB15B3217D7A55100F15291 /* This_is_a_post! */ = {
+			isa = PBXGroup;
+			children = (
+				5BB15B3717D7A5E500F15291 /* index */,
+				5BB15B3817D7A5E500F15291 /* meta.ini */,
+			);
+			path = "This_is_a_post!";
+			sourceTree = "<group>";
+		};
+		5BB15B3317D7A55100F15291 /* pages */ = {
+			isa = PBXGroup;
+			children = (
+				5BB15B3E17D7A77C00F15291 /* Home */,
+				5BB15B3B17D7A77C00F15291 /* About */,
+			);
+			path = pages;
+			sourceTree = "<group>";
+		};
+		5BB15B3B17D7A77C00F15291 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				5BB15B3C17D7A77C00F15291 /* index */,
+				5BB15B3D17D7A77C00F15291 /* meta.ini */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		5BB15B3E17D7A77C00F15291 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5BB15B3F17D7A77C00F15291 /* index */,
+				5BB15B4017D7A77C00F15291 /* meta.ini */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5BB15B4117D7A83600F15291 /* media */ = {
+			isa = PBXGroup;
+			children = (
+				5BB15B4217D7A83600F15291 /* 0.jpg */,
+			);
+			path = media;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
