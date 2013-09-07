@@ -23,7 +23,7 @@
 				<span id="links">
 					<?php
 						require "misc.php";
-						$settings = parse_ini_file('settings.ini');
+						$settings = parse_ini_file ('settings.ini');
 						$pages = scandir ($settings['pagesDir']);
 						$linkArray = array();
 						$sortArray = array();
@@ -39,8 +39,11 @@
 								}
 								
 								$pageIni = $settings['pagesDir']."/".$page."/meta.ini";
-								$pageSettigns = parse_ini_file($pageIni);
-								echo $pageIni;
+								$pageIniString = file_get_contents ($pageIni);
+								echo $pageIniString;
+								$pageSettigns = parse_ini_string ($pageIniString);
+								
+								print_r ($pageSettings);
 								
 								array_push ($sortArray, $pageSettings['sort']);
 								array_push ($linkArray, "<a href='?p=$page' class='$class'>$page</a>");
