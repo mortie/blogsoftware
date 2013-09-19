@@ -1,0 +1,69 @@
+<p>As some of you may know, I&#8217;m a fan of JavaScript. Pretty much all of <a href="http://mortie.org/?page_id=28">my projects</a> are web apps, and as such, JavaScript is an important part of them.</p>
+
+<p>JavaScript does have it&#8217;s <a href="http://www.amazon.com/dp/0596517742">good parts</a>. Parts which at the very least are en par with other languages. It does, however, also have quite a bit of bad parts.</p>
+
+<p>In the beginning, there was Brendan Eich. Eich got hired by Netscape to design a programming language for their web browser. At first, what he had in mind was something resembling <a href="http://en.wikipedia.org/wiki/Scheme_(programming_language)">Scheme</a>, a dialect of <a href="http://en.wikipedia.org/wiki/Lisp_programming_language">Lisp</a>.</p>
+
+<?php $img="Eich.png"; $alt="Designer of JavaScript"; include "show/image.php";?>
+
+<p>When he had worked for some time on this Scheme-esque language, someone, presumably in Netscape&#8217;s management, decided they wanted something else. Eich got told to start from scratch. This whole Java-thing seemed to be taking off, so he would have to make it more like Java. &#8220;And by the way, we need it in ten days&#8221;, they told him.</p>
+
+<p>Now, ten days is orders of magnitude less than you need to design a great language. Eich did a great job, but as you would expect however, it did have quite a few unforeseen quirks.</p>
+
+<p>Unsurprisingly, Microsoft decided to copy Netscape. They had a team dedicated to find JavaScript&#8217;s quirks &#8211; and replicate them.</p>
+
+<p>Fast forward a bit, and Netscape submit their language to European Computer Manufacturers Association, or ECMA, to make it a standard. ECMA agrees, on the premise that it won&#8217;t be called JavaScript anymore. A team of people started writing detailed documentation for what was internally called ECMAScript. Microsoft had a key role in this documentation process, and due to their work on accurately cloning Netscape&#8217;s JavaScript implementation they knew exactly what odd quirks JavaScript had, and thus what they should make sure to avoid. Or, as it turns out, make sure it got into the standard. Yeah.</p>
+
+<p>This glorious work from Microsoft&#8217;s side is part of the reason JavaScript is the inconsistent mess it is today. Take for instance how typeof null is &#8220;object&#8221;. That, and a bunch more, is a result of the incredibly short amount of time Eich had to make JavaScript, and Microsoft&#8217;s effort to make sure all quirks from the original JavaScript implementation stuck in the ECMAScript standard.</p>
+
+<h2>Abstraction</h2>
+<p>Even though it can be tempting to blame Microsoft for everything wrong in the world, it should be said that they aren&#8217;t the root of all problems with JavaScript. Some of the problems aren&#8217;t even real problems, but a result of <a href="http://www.joelonsoftware.com/articles/LeakyAbstractions.html">leaky abstractions</a>.</p>
+
+<p>It is fairly obvious that JavaScript tries to be fairly abstract. Take for instance how it doesn&#8217;t have types. That&#8217;s an abstraction. Internally, the computer does distinguish between text, integers, numbers with decimals, booleans and more. The JavaScript language tries to hide this however. In the world of JavaScript, everything&#8217;s a &#8220;variable&#8221;, declared by the keyword &#8220;var&#8221;.</p>
+
+<p>One problem which almost <a href="http://zef.me/4440/zefs-law">exploded in my face</a> is related to how some of JavaScripts types are passed by reference, and others by value.</p>
+
+<p>Now some of you may never have heard of passing values by reference or values is. Nor do you understand why it&#8217;s a big deal. Even if you&#8217;re a programmer, this can be a completely foreign concept for you. If that&#8217;s the case, chances are you&#8217;re using a very abstract language like JavaScript.</p>
+
+<p>I won&#8217;t get too much into the inner workings of computers, but I will try to explain the basics of passing by references and values.</p>
+
+<p>Say you have two variables, Foo and Bar. Say you set Foo to 5:</p>
+
+<blockquote><p>Foo = 5</p>
+</blockquote>
+<p>Now, we set Bar to Foo:</p>
+
+<blockquote><p>Bar = Foo</p>
+</blockquote>
+<p>If we pass by value, Bar and Foo will be two distinct, completely unrelated variables. Changing one will never ever in a billion years affect the other.</p>
+
+<p>If we however pass by reference, Bar isn&#8217;t a value in itself. When someone ask what Bar is, it simply says &#8220;go check out Foo, maybe he knows&#8221;; Bar is what we call a pointer. Because of this, when you change Foo, Bar&#8217;s value also changes. If we set Foo to 10, Bar is also set to 10. This also works the other way around, at least in JavaScript. If we set Bar to 12053, Foo will be set to 12053. The two variables are the same, just under different names.</p>
+
+<p>Passing by reference can be a lot faster when dealing with big variables. Therefore, JavaScript passes some types by reference. Those types are functions, arrays and objects. The problem here is that when programming in JavaScript, there&#8217;s no clear distinction between types. After all, that&#8217;s the point of being an untyped language isn&#8217;t it?</p>
+
+<p>This can cause some really confusing quirks. For instance, after this code, bar is 10:</p>
+
+<blockquote><p>foobar = 10;<br />
+bar = foobar;<br />
+foobar = 20;</p>
+</blockquote>
+<p>while after this code, bar.val is 20:</p>
+
+<blockquote><p>foo = {&#8216;bar&#8217;: 10};<br />
+bar = foo;<br />
+foo.bar = 20;</p>
+</blockquote>
+<p>If you&#8217;re not experienced in JavaScript, or programming in general, this might not make a lot of sense to you. Trust me though when I say that this can cause severe problems.</p>
+
+<p>Of corse, the whole problem would be gone if JavaScript by default passed values by value. Passing by reference could be an option. This is how C does it, and it works great.</p>
+
+<p>There are other quite freaky abstractions out there. Take for instance how JavaScript doesn&#8217;t force you to use semicolons at the end of lines. It does this by automatically inserting semicolons where they are missing. One of the ways it does this is really creepy: it runs a line of code, and if it fails, it inserts a semicolon at the end and tries again. There are a few problems caused by this which I wont get into, but most of all it&#8217;s just creeping me out to know that JavaScript does that. It does also teach new programmers the horrible custom of ignoring semicolon, so using languages where semicolons are required becomes a hell. Therefore, use semicolons!</p>
+
+<h2>Solutions</h2>
+<p>What can we do to make our web programming lives easier, and overcome JavaScript&#8217;s flaws?</p>
+
+<p>One of the solutions can be to translate other languages to JavaScript. Lots of such translators have been made, and nowadays you can translate pretty much any language &#8211; C, C++, C#, Java, you name it &#8211; into JavaScript. People are even designing languages whose sole purpose are to be translated into JavaScript code. <a href="http://coffeescript.org">CoffeeScript</a> is an example of this. A problem with translating other languages however is that the web browser will still be running JavaScript code, and will spew out errors in the JavaScript code. It can&#8217;t magically know where in the code you wrote the error is. This adds a lot of complication to debugging, and you pretty much have to be fluent in JavaScript anyways to be able to see what the error really is.</p>
+
+<p>Another solution is to simply go with JavaScript &#8211; learn to love its quirks, or at least learn how to overcome them. Know that if you try to compare a NaN value to another NaN value, it will return false. Learn that when you typeof null it will return &#8220;object&#8221;. Learn that if you declare variables certain ways, they are objects, arrays or functions, and as such are passed by reference, and learn what passing by value/reference really means. Learn to always have your Google machine ready. Learn that while high levels of abstraction makes languages a lot easier to get involved with, it also makes it quite a bit harder to really get to know the language.</p>
+
+<p>(some of the things I&#8217;ve written here, I learned from a talk about JavaScript. I think the talk was by Douglas Crockford. Sadly I can&#8217;t find it again.)</p>

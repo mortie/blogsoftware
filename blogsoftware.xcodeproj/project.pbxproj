@@ -7,92 +7,254 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		5B865E7A17DA37F2006F35FC /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
-		5B865E7B17DA37F2006F35FC /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
-		5B865E7D17DA37F2006F35FC /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
-		5B865E7E17DA37F2006F35FC /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
-		5BB15B2E17D7A04900F15291 /* index.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = index.php; sourceTree = "<group>"; };
-		5BB15B2F17D7A0D400F15291 /* settings.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = settings.ini; sourceTree = "<group>"; };
-		5BB15B3717D7A5E500F15291 /* index */ = {isa = PBXFileReference; lastKnownFileType = text; name = index; path = "content/posts/This_is_a_post!/index"; sourceTree = SOURCE_ROOT; };
-		5BB15B3817D7A5E500F15291 /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = meta.ini; path = "content/posts/This_is_a_post!/meta.ini"; sourceTree = SOURCE_ROOT; };
-		5BB15B4217D7A83600F15291 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
-		5BB15B4417D7AA2600F15291 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
-		5BB15B4517D7CA4C00F15291 /* misc.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = misc.php; sourceTree = "<group>"; };
+		5B1544E817E764C000FE1A7B /* .htaccess */ = {isa = PBXFileReference; lastKnownFileType = text; path = .htaccess; sourceTree = "<group>"; };
+		5B1544EE17E764C000FE1A7B /* mortAndBro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mortAndBro.jpg; sourceTree = "<group>"; };
+		5B1544F117E764C000FE1A7B /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5B1544F217E764C000FE1A7B /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5B1544F417E764C000FE1A7B /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5B1544F517E764C000FE1A7B /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5B1544F717E764C000FE1A7B /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5B1544F817E764C000FE1A7B /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5B1544FA17E764C000FE1A7B /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5B1544FB17E764C000FE1A7B /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5B15451817E764C000FE1A7B /* index.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = index.php; sourceTree = "<group>"; };
+		5B15451A17E764C000FE1A7B /* settings.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = settings.ini; sourceTree = "<group>"; };
+		5B15451C17E764C000FE1A7B /* allposts.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = allposts.php; sourceTree = "<group>"; };
+		5B15451D17E764C000FE1A7B /* header.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = header.php; sourceTree = "<group>"; };
+		5B15451E17E764C000FE1A7B /* menu.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = menu.php; sourceTree = "<group>"; };
+		5B15452017E764C000FE1A7B /* subscribe.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = subscribe.php; sourceTree = "<group>"; };
+		5B15452117E764C000FE1A7B /* title.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = title.php; sourceTree = "<group>"; };
+		5B15452317E7654E00FE1A7B /* image.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = image.php; sourceTree = "<group>"; };
+		5B15452417E7B14500FE1A7B /* Eich.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eich.png; sourceTree = "<group>"; };
+		5B15452517E7C89600FE1A7B /* post.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = post.php; sourceTree = "<group>"; };
+		5B4DB06A17E8E71B00B52CD4 /* content.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = content.css; sourceTree = "<group>"; };
+		5B4DB06B17E8E71B00B52CD4 /* head.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = head.css; sourceTree = "<group>"; };
+		5B4DB06C17E8E71B00B52CD4 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		5B4DB06D17E8E7AC00B52CD4 /* comments.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = comments.css; sourceTree = "<group>"; };
+		5B4DB06E17E8E7E600B52CD4 /* comments.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = comments.php; sourceTree = "<group>"; };
+		5B4DB07817E9874800B52CD4 /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5B4DB07917E9874800B52CD4 /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5B4DB07B17E9874800B52CD4 /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5B4DB07C17E9874800B52CD4 /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5B4DB07E17E9874800B52CD4 /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5B4DB07F17E9874800B52CD4 /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5B4DB08117E9874800B52CD4 /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5B4DB08217E9874800B52CD4 /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5B4DB08417E9874800B52CD4 /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5B4DB08517E9874800B52CD4 /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5B4DB08717E9874800B52CD4 /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5B4DB08817E9874800B52CD4 /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5B4DB08A17E9874800B52CD4 /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5B4DB08B17E9874800B52CD4 /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5B4DB08D17E9874800B52CD4 /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5B4DB08E17E9874800B52CD4 /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5B4DB09017E9874800B52CD4 /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
+		5B4DB09117E9874800B52CD4 /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
+		5B5BD5FD17EA38AD005FD60B /* page.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = page.php; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		5B865E7917DA37F2006F35FC /* About */ = {
+		5B1544EC17E764C000FE1A7B /* content */ = {
 			isa = PBXGroup;
 			children = (
-				5B865E7A17DA37F2006F35FC /* index */,
-				5B865E7B17DA37F2006F35FC /* meta.ini */,
+				5B1544ED17E764C000FE1A7B /* media */,
+				5B1544EF17E764C000FE1A7B /* pages */,
+				5B4DB07617E9874800B52CD4 /* posts */,
+			);
+			path = content;
+			sourceTree = "<group>";
+		};
+		5B1544ED17E764C000FE1A7B /* media */ = {
+			isa = PBXGroup;
+			children = (
+				5B15452417E7B14500FE1A7B /* Eich.png */,
+				5B1544EE17E764C000FE1A7B /* mortAndBro.jpg */,
+			);
+			path = media;
+			sourceTree = "<group>";
+		};
+		5B1544EF17E764C000FE1A7B /* pages */ = {
+			isa = PBXGroup;
+			children = (
+				5B1544F017E764C000FE1A7B /* About */,
+				5B1544F317E764C000FE1A7B /* Home */,
+				5B1544F617E764C000FE1A7B /* Projects */,
+				5B1544F917E764C000FE1A7B /* Subscribe */,
+			);
+			path = pages;
+			sourceTree = "<group>";
+		};
+		5B1544F017E764C000FE1A7B /* About */ = {
+			isa = PBXGroup;
+			children = (
+				5B1544F117E764C000FE1A7B /* index */,
+				5B1544F217E764C000FE1A7B /* meta.ini */,
 			);
 			path = About;
 			sourceTree = "<group>";
 		};
-		5B865E7C17DA37F2006F35FC /* Home */ = {
+		5B1544F317E764C000FE1A7B /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				5B865E7D17DA37F2006F35FC /* index */,
-				5B865E7E17DA37F2006F35FC /* meta.ini */,
+				5B1544F417E764C000FE1A7B /* index */,
+				5B1544F517E764C000FE1A7B /* meta.ini */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		5B1544F617E764C000FE1A7B /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				5B1544F717E764C000FE1A7B /* index */,
+				5B1544F817E764C000FE1A7B /* meta.ini */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		5B1544F917E764C000FE1A7B /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				5B1544FA17E764C000FE1A7B /* index */,
+				5B1544FB17E764C000FE1A7B /* meta.ini */,
+			);
+			name = Subscribe;
+			path = subscribe;
+			sourceTree = "<group>";
+		};
+		5B15451B17E764C000FE1A7B /* show */ = {
+			isa = PBXGroup;
+			children = (
+				5B15451C17E764C000FE1A7B /* allposts.php */,
+				5B4DB06E17E8E7E600B52CD4 /* comments.php */,
+				5B15451D17E764C000FE1A7B /* header.php */,
+				5B15451E17E764C000FE1A7B /* menu.php */,
+				5B15452017E764C000FE1A7B /* subscribe.php */,
+				5B15452117E764C000FE1A7B /* title.php */,
+				5B15452317E7654E00FE1A7B /* image.php */,
+				5B15452517E7C89600FE1A7B /* post.php */,
+				5B5BD5FD17EA38AD005FD60B /* page.php */,
+			);
+			path = show;
+			sourceTree = "<group>";
+		};
+		5B4DB06917E8E71B00B52CD4 /* style */ = {
+			isa = PBXGroup;
+			children = (
+				5B4DB06A17E8E71B00B52CD4 /* content.css */,
+				5B4DB06D17E8E7AC00B52CD4 /* comments.css */,
+				5B4DB06B17E8E71B00B52CD4 /* head.css */,
+				5B4DB06C17E8E71B00B52CD4 /* style.css */,
+			);
+			path = style;
+			sourceTree = "<group>";
+		};
+		5B4DB07617E9874800B52CD4 /* posts */ = {
+			isa = PBXGroup;
+			children = (
+				5B4DB07717E9874800B52CD4 /* considered_harmful_essays_considered_harmful_essays_considered_harmful */,
+				5B4DB07A17E9874800B52CD4 /* javascripts_rough_childhood */,
+				5B4DB07D17E9874800B52CD4 /* my_worst_code */,
+				5B4DB08017E9874800B52CD4 /* on_secure_stack_loaders_and_other_fancy_stuff */,
+				5B4DB08317E9874800B52CD4 /* open_redstone_engineers_redstone_server */,
+				5B4DB08617E9874800B52CD4 /* programming_culture_and_programming_languages */,
+				5B4DB08917E9874800B52CD4 /* rant_about_youtube */,
+				5B4DB08C17E9874800B52CD4 /* ridicule_my_new_game */,
+				5B4DB08F17E9874800B52CD4 /* what_if_you_could_rewind_time_10_seconds */,
+			);
+			path = posts;
+			sourceTree = "<group>";
+		};
+		5B4DB07717E9874800B52CD4 /* considered_harmful_essays_considered_harmful_essays_considered_harmful */ = {
+			isa = PBXGroup;
+			children = (
+				5B4DB07817E9874800B52CD4 /* index */,
+				5B4DB07917E9874800B52CD4 /* meta.ini */,
+			);
+			path = considered_harmful_essays_considered_harmful_essays_considered_harmful;
+			sourceTree = "<group>";
+		};
+		5B4DB07A17E9874800B52CD4 /* javascripts_rough_childhood */ = {
+			isa = PBXGroup;
+			children = (
+				5B4DB07B17E9874800B52CD4 /* index */,
+				5B4DB07C17E9874800B52CD4 /* meta.ini */,
+			);
+			path = javascripts_rough_childhood;
+			sourceTree = "<group>";
+		};
+		5B4DB07D17E9874800B52CD4 /* my_worst_code */ = {
+			isa = PBXGroup;
+			children = (
+				5B4DB07E17E9874800B52CD4 /* index */,
+				5B4DB07F17E9874800B52CD4 /* meta.ini */,
+			);
+			path = my_worst_code;
+			sourceTree = "<group>";
+		};
+		5B4DB08017E9874800B52CD4 /* on_secure_stack_loaders_and_other_fancy_stuff */ = {
+			isa = PBXGroup;
+			children = (
+				5B4DB08117E9874800B52CD4 /* index */,
+				5B4DB08217E9874800B52CD4 /* meta.ini */,
+			);
+			path = on_secure_stack_loaders_and_other_fancy_stuff;
+			sourceTree = "<group>";
+		};
+		5B4DB08317E9874800B52CD4 /* open_redstone_engineers_redstone_server */ = {
+			isa = PBXGroup;
+			children = (
+				5B4DB08417E9874800B52CD4 /* index */,
+				5B4DB08517E9874800B52CD4 /* meta.ini */,
+			);
+			path = open_redstone_engineers_redstone_server;
+			sourceTree = "<group>";
+		};
+		5B4DB08617E9874800B52CD4 /* programming_culture_and_programming_languages */ = {
+			isa = PBXGroup;
+			children = (
+				5B4DB08717E9874800B52CD4 /* index */,
+				5B4DB08817E9874800B52CD4 /* meta.ini */,
+			);
+			path = programming_culture_and_programming_languages;
+			sourceTree = "<group>";
+		};
+		5B4DB08917E9874800B52CD4 /* rant_about_youtube */ = {
+			isa = PBXGroup;
+			children = (
+				5B4DB08A17E9874800B52CD4 /* index */,
+				5B4DB08B17E9874800B52CD4 /* meta.ini */,
+			);
+			path = rant_about_youtube;
+			sourceTree = "<group>";
+		};
+		5B4DB08C17E9874800B52CD4 /* ridicule_my_new_game */ = {
+			isa = PBXGroup;
+			children = (
+				5B4DB08D17E9874800B52CD4 /* index */,
+				5B4DB08E17E9874800B52CD4 /* meta.ini */,
+			);
+			path = ridicule_my_new_game;
+			sourceTree = "<group>";
+		};
+		5B4DB08F17E9874800B52CD4 /* what_if_you_could_rewind_time_10_seconds */ = {
+			isa = PBXGroup;
+			children = (
+				5B4DB09017E9874800B52CD4 /* index */,
+				5B4DB09117E9874800B52CD4 /* meta.ini */,
+			);
+			path = what_if_you_could_rewind_time_10_seconds;
 			sourceTree = "<group>";
 		};
 		5BB15B2717D7A04000F15291 = {
 			isa = PBXGroup;
 			children = (
-				5BB15B4417D7AA2600F15291 /* style.css */,
-				5BB15B2E17D7A04900F15291 /* index.php */,
-				5BB15B4517D7CA4C00F15291 /* misc.php */,
-				5BB15B2F17D7A0D400F15291 /* settings.ini */,
-				5BB15B3017D7A55100F15291 /* content */,
+				5B1544E817E764C000FE1A7B /* .htaccess */,
+				5B15451A17E764C000FE1A7B /* settings.ini */,
+				5B15451817E764C000FE1A7B /* index.php */,
+				5B15451B17E764C000FE1A7B /* show */,
+				5B1544EC17E764C000FE1A7B /* content */,
+				5B4DB06917E8E71B00B52CD4 /* style */,
 			);
-			sourceTree = "<group>";
-		};
-		5BB15B3017D7A55100F15291 /* content */ = {
-			isa = PBXGroup;
-			children = (
-				5BB15B4117D7A83600F15291 /* media */,
-				5BB15B3117D7A55100F15291 /* posts */,
-				5BB15B3317D7A55100F15291 /* pages */,
-			);
-			path = content;
-			sourceTree = "<group>";
-		};
-		5BB15B3117D7A55100F15291 /* posts */ = {
-			isa = PBXGroup;
-			children = (
-				5BB15B3217D7A55100F15291 /* This_is_a_post! */,
-			);
-			name = posts;
-			path = "blog posts";
-			sourceTree = "<group>";
-		};
-		5BB15B3217D7A55100F15291 /* This_is_a_post! */ = {
-			isa = PBXGroup;
-			children = (
-				5BB15B3717D7A5E500F15291 /* index */,
-				5BB15B3817D7A5E500F15291 /* meta.ini */,
-			);
-			path = "This_is_a_post!";
-			sourceTree = "<group>";
-		};
-		5BB15B3317D7A55100F15291 /* pages */ = {
-			isa = PBXGroup;
-			children = (
-				5B865E7917DA37F2006F35FC /* About */,
-				5B865E7C17DA37F2006F35FC /* Home */,
-			);
-			path = pages;
-			sourceTree = "<group>";
-		};
-		5BB15B4117D7A83600F15291 /* media */ = {
-			isa = PBXGroup;
-			children = (
-				5BB15B4217D7A83600F15291 /* 0.jpg */,
-			);
-			path = media;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

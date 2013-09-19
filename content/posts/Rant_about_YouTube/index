@@ -1,0 +1,26 @@
+<p>Since its inception in 2005, YouTube has grown out of proportions. It is to videos what Google is to search.</p>
+<p>With a user base of billions of people and thousands of hours of footage uploaded daily, you’d almost think they knew what they were doing. And they do, from an infrastructure standpoint &#8211; that amount of traffic requires vast server farms all around the world, all working together.</p>
+<p>Where YouTube lacks however, is in terms of its user interface. There are some real disasters in this department. </p>
+<p>Take for instance selecting a video’s quality. When you change the quality from the default 360p to say 720p, and user would expect the quality to change. The <strong>user model</strong> says that when you change quality, the quality changes. Believe it or not, the YouTube team actually managed to get this wrong.</p>
+<p>When you change a video’s quality, the video remains in its original quality. It changes to the selected quality only when it has played through all that is already buffered.</p>
+<p>For me, a pattern like this is not unusual:<br />
+I click on a video. I fullscreen it on my big 1080p display, before changing the quality to 1080p, but due to my 70 Mb/s internet connection and YouTube’s great infrastructure, 3/4 of the video is already loaded. I proceed to watch 3/4 of the video in horrible quality, before it switches over to beautiful full HD.</p>
+<p>One definition of great software, is that the program model corresponds to the user model. Basically, the program should behave like the user expects. The user model is definitely not that changes in quality settings applies only after watching a random portion of the video, if at all.</p>
+<p>Another cause of bad usability is frequent changes in the user interface. Not small changes, like altering the looks of a button here and adding some gradients there. No, we’re talking total overhauls of the UI. Completely revamping how everything is structured.</p>
+<p>YouTube has had quite a few of these huge overhauls. Some times it has restructured everything multiple times per year.</p>
+<p>Users hate big changes. The reason is that users don’t analyze the interface and look for the most logical place for a feature every time they need said feature. No, we users memorize where what we need is, and navigate there out of habit more than anything else, at least with programs we use frequently.</p>
+<p>When the user interface is restructured, we still go looking for what we want in the areas we’re used to. When that doesn’t work, we lose our feeling of control. The program now has control over you. This happens unconsciously, and leads to frustration.</p>
+<p>Furthermore, it forces us to reanalyze the interface and look for features we previously knew where was. As it turns out, this causes quite a bit of cognitive overhead. Our brains are way better at just looking up already stored information than processing brand new data. When YouTube us completely overhauling its website multiple times per year, this becomes quite a bit of an annoyance.</p>
+<p>The mobile application for iOS, and possible Android, is a bit of a disaster too. At least in sone respects. Sure, it has its bright sides, but as this is a hateful rant, I’ll jump gracefully over those and focus on the bad aspects.</p>
+<p>In YouTube, there is a comment section, as you may know already. It’s possible to reply to people’s comments. You can even see who a comment is a reply to, and by the press of a button, you can see the original comment.</p>
+<p>The team working on the mobile app rightfully decided to implement the comment section. What they did not however, was to let you see who a comment is a reply to, rendering it useless. You see, this reply-to-feature is frequently used. It’s used so much that without it, the comment section is just a bunch of random statements, completely out of context.</p>
+<p>The app also has a feature which dynamically sets the video’s quality according to your internet speed. Unfortunately, this doesn’t quite work right.</p>
+<p>In my home, there’s an area which the router’s WiFi doesn’t quite reach. When I move into it, YouTuve notices the bad connection and drops the quality to below unbearable. It seriously looks like a grunge teared apart by a crack in the space time continuum, just slightly less fancy. Unfortunately, it does not adjust itself once the connection picks up again for quite some time. This forces me to exit out of the video, scan the list of videos for the proper one, wait for it to load, and navigate to where I was. As you might expect, this completely kills my flow.</p>
+<p>In short, how to fix YouTube:
+<ul>
+<li>Make quality changes immideate</li>
+<li>Less frequent UI overhauls</li>
+<li>Implement replies into the mobile app’s comment sections</li>
+<li>Provide optional quality controls to the mobile app</li>
+<li>Make the app better at automatically selecting quality</li>
+</ul>

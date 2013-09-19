@@ -1,83 +1,74 @@
+<?php
+	$SETTINGS = parse_ini_file('settings.ini');
+	
+	$PAGE = $_GET[$SETTINGS['paramPage']];
+	$POST = $_GET[$SETTINGS['paramPost']];
+	if (strlen($PAGE) == 0 && $POST == "") {
+		$PAGE = $SETTINGS['defaultPage'];
+	}
+	
+	if ($PAGE != "") {
+		$PATH = $SETTINGS['pagesDir'].$PAGE."/";
+		$VIEW = "PAGE";
+	} else if ($POST != "") {
+		$PATH = $SETTINGS['postsDir'].$POST."/";
+		$VIEW = "POST";
+	}
+	
+	$PMETA = parse_ini_file($PATH."meta.ini");
+	
+	echo "
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>
-		<?php
-			$settings = parse_ini_file("settings.ini");
-			echo $settings['title'];
-		?>
+		<title>";
+			require "show/title.php";
+		echo "
 		</title>
-		<link rel="stylesheet" href="style.css"></link>
+		<meta charset='UTF-8'>
+		<link rel='stylesheet' href='style/style.css'>
+		<link rel='stylesheet' href='style/head.css'>
+		<link rel='stylesheet' href='style/content.css'>
+		<link rel='stylesheet' href='style/comments.css'>
 	</head>
 	<body>
-		<div id="menu">
-			<div id="container">
-				<span id="header">
-					<a href="?">
-					<?php
-						$settings = parse_ini_file('settings.ini');
-						echo $settings['header'];
-					?>
+		<div id='menu' class='section'>
+			<div class='container'>
+				<span id='header'>
+					<a href='?'>";
+						require "show/header.php";
+					echo "
 					</a>
 				</span>
 				<br>
-				<span id="links">
-					<?php
-						require "misc.php";
-						$settings = parse_ini_file ('settings.ini');
-						$pages = scandir ($settings['pagesDir']);
-						$linkArray = array();
-						$sortArray = array();
-						
-						foreach ($pages as $page) {
-							if (!in_array($page, $settings['excludedNames'])) {
-								$p = $_GET['p'];
-
-								if ($page == $p || (strlen($p) == 0 && $page == $settings['defaultPage'])) {
-									$class = "currentButton button";
-								} else {
-									$class = "button";
-								}
-								
-								$pageIni = $settings['pagesDir']."/".$page."/meta.ini";
-								$pageIniString = file_get_contents ($pageIni);
-								echo $pageIniString;
-								$pageSettigns = parse_ini_string ($pageIniString);
-								
-								print_r ($pageSettings);
-								
-								array_push ($sortArray, $pageSettings['sort']);
-								array_push ($linkArray, "<a href='?p=$page' class='$class'>$page</a>");
-							}
-						}
-						$sorted = sort_by_array($linkArray, $sortArray);
-						
-						foreach ($sorted as $link) {
-							echo $link;
-						}
-						printf("\n");
-					?>
+				<span id='links'>";
+					require "show/menu.php";
+				echo "
 				</span>
-				<span id="separator">
-					<hr>
-				</span>
+				<hr id='separator'>
 			</div>
 		</div>
-		<div id="content">
-			<div id="container">
-<?php
-	$settings = parse_ini_file('settings.ini');
-	$page = $_GET['p'];
-		
-	if (strlen($page) == 0) {
-		$page = $settings['defaultPage'];
-	}
-	
-	$path = $settings['pagesDir']."/".$page."/".index;
-				
-	include $path;
-	printf("\n");
-?>
+		<div id='content' class='section'>
+			<div class='container'>";
+				if ($VIEW == "PAGE") {
+					require "show/page.php";
+				} else {
+					require "show/post.php";
+				}
+			echo "
 			</div>
+		</div>";
+		if ($PMETA['comments']) {
+			echo "
+			<div id='comments' class='section'>
+				<div class='container'>";
+					require "show/comments.php";
+				echo "
+				</div>
+			</div>";
+		}
+		echo "
 		</div>
 	</body>
-</html>
+</html>";
+?>
