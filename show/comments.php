@@ -13,9 +13,9 @@
 					$cSettings = parse_ini_file($cPath."meta.ini");
 					$content = file_get_contents($cPath."index");
 					
-					echo "		<span class='commentName'>".htmlentities($cSettings['name'])."</span>\r\n";
-					echo "		<span class='commentContent'>".htmlentities($content)."</span>\r\n";
-					echo "		<hr class='commentSeparator'>\r\n";
+					echo "<span class='commentName'>".htmlentities($cSettings['name'])."</span>\r\n";
+					echo "<span class='commentContent'>".htmlentities($content)."</span>\r\n";
+					echo "<hr class='commentSeparator'>\r\n";
 				}
 			}
 		}
