@@ -22,3 +22,8 @@ body {
 	border-style: none;
 	border-radius: 2px;
 }
+
+.hidden {
+	display: none;
+	visibility: hidden;
+}

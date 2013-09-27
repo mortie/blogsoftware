@@ -1,5 +1,7 @@
 
 <!--start of post.php-->
+<div id='content' class='section'>
+	<div class='container'>
 <?php
 	$param = "?".$SETTINGS['paramPost']."=".$POST;
 	echo "<span class='postTitle'><a href=\"$param\">";
@@ -14,4 +16,6 @@
 	include $PATH."index";
 	echo "\r\n";
 ?>
+	</div>
+</div>
 <!--end of post.php-->

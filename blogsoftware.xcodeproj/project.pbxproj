@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		5B1544E817E764C000FE1A7B /* .htaccess */ = {isa = PBXFileReference; lastKnownFileType = text; path = .htaccess; sourceTree = "<group>"; };
 		5B1544EE17E764C000FE1A7B /* mortAndBro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mortAndBro.jpg; sourceTree = "<group>"; };
 		5B1544F117E764C000FE1A7B /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
 		5B1544F217E764C000FE1A7B /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
@@ -20,7 +19,6 @@
 		5B15451817E764C000FE1A7B /* index.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = index.php; sourceTree = "<group>"; };
 		5B15451A17E764C000FE1A7B /* settings.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = settings.ini; sourceTree = "<group>"; };
 		5B15451C17E764C000FE1A7B /* allposts.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = allposts.php; sourceTree = "<group>"; };
-		5B15451D17E764C000FE1A7B /* header.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = header.php; sourceTree = "<group>"; };
 		5B15451E17E764C000FE1A7B /* menu.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = menu.php; sourceTree = "<group>"; };
 		5B15452017E764C000FE1A7B /* subscribe.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = subscribe.php; sourceTree = "<group>"; };
 		5B15452117E764C000FE1A7B /* title.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = title.php; sourceTree = "<group>"; };
@@ -51,6 +49,9 @@
 		5B4DB09017E9874800B52CD4 /* index */ = {isa = PBXFileReference; lastKnownFileType = text; path = index; sourceTree = "<group>"; };
 		5B4DB09117E9874800B52CD4 /* meta.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = meta.ini; sourceTree = "<group>"; };
 		5B5BD5FD17EA38AD005FD60B /* page.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = page.php; sourceTree = "<group>"; };
+		5B5BD5FE17EB611C005FD60B /* newcomment.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = newcomment.php; sourceTree = "<group>"; };
+		5B6352B117F4C17700A36C46 /* postcomment.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = postcomment.php; sourceTree = "<group>"; };
+		5BC2CFEA17F63AD000006029 /* html.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = html.php; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -125,14 +126,15 @@
 			isa = PBXGroup;
 			children = (
 				5B15451C17E764C000FE1A7B /* allposts.php */,
-				5B4DB06E17E8E7E600B52CD4 /* comments.php */,
-				5B15451D17E764C000FE1A7B /* header.php */,
 				5B15451E17E764C000FE1A7B /* menu.php */,
 				5B15452017E764C000FE1A7B /* subscribe.php */,
 				5B15452117E764C000FE1A7B /* title.php */,
 				5B15452317E7654E00FE1A7B /* image.php */,
 				5B15452517E7C89600FE1A7B /* post.php */,
 				5B5BD5FD17EA38AD005FD60B /* page.php */,
+				5B4DB06E17E8E7E600B52CD4 /* comments.php */,
+				5B5BD5FE17EB611C005FD60B /* newcomment.php */,
+				5BC2CFEA17F63AD000006029 /* html.php */,
 			);
 			path = show;
 			sourceTree = "<group>";
@@ -245,13 +247,21 @@
 			path = what_if_you_could_rewind_time_10_seconds;
 			sourceTree = "<group>";
 		};
+		5B6352AF17F4C0EC00A36C46 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				5B6352B117F4C17700A36C46 /* postcomment.php */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
 		5BB15B2717D7A04000F15291 = {
 			isa = PBXGroup;
 			children = (
-				5B1544E817E764C000FE1A7B /* .htaccess */,
 				5B15451A17E764C000FE1A7B /* settings.ini */,
 				5B15451817E764C000FE1A7B /* index.php */,
 				5B15451B17E764C000FE1A7B /* show */,
+				5B6352AF17F4C0EC00A36C46 /* scripts */,
 				5B1544EC17E764C000FE1A7B /* content */,
 				5B4DB06917E8E71B00B52CD4 /* style */,
 			);

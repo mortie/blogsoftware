@@ -6,6 +6,10 @@
 
 #comments .commentName {
 	display: block;
+	font-weight: bold;
+	text-align: left;
+	color: #000;
+	font-size: 20px;
 }
 
 #comments .commentContent {
@@ -14,4 +18,40 @@
 
 #comments .commentSeparator {
 	
+}
+
+
+
+#newComment .container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+#newComment .nameLabel {
+	display: block;
+	font-weight: bold;
+	text-align: left;
+	color: #000;
+	font-size: 20px;
+}
+
+#newComment .nameArea {
+	resize: none;
+	width: 100%;
+}
+
+#newComment .commentLabel {
+	display: block;
+	font-weight: bold;
+	text-align: left;
+	color: #000;
+	font-size: 20px;
+}
+
+#newComment .commentArea {
+	width: 100%;
+	height: 100px;
+	
+	resize: vertical;
 }
