@@ -1,3 +1,7 @@
+#comments:empty {
+	display: none;
+}
+
 #comments .container {
 	margin-left: auto;
 	margin-right: auto;
@@ -26,6 +30,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	width: 80%;
+	padding-bottom: 30px;
 }
 
 #newComment .nameLabel {
@@ -54,4 +59,27 @@
 	height: 100px;
 	
 	resize: vertical;
+}
+
+#newComment button {
+	float: right;
+	margin-right: -5px;
+	
+	width: 90px;
+	height: 23px;
+	
+	border-radius: 20px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000;
+	
+	box-shadow: 1px 1px 3px #000;
+	
+	background-color: #DDD;
+}
+#newComment button:hover {
+	background-color: #BBB;
+}
+#newComment button:active {
+	background-color: #999;
 }
