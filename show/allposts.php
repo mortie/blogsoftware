@@ -29,8 +29,7 @@
 			echo "</a></span>";
 
 			echo "<span class='date'>";
-			$timeStamp = $pMeta['dateMilliseconds']/1000;
-			echo date("M jS Y", $timeStamp);
+			echo date("M jS Y", $pMeta['dateSeconds']);
 			echo "</span>";
 
 			include $postsPath.$post."/index";

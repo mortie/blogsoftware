@@ -1,5 +1,0 @@
-Subscribe to the newsletter, and get an email once I write a new post.
-
-<?php
-	require "show/subscribe.php";
-?>

@@ -5,7 +5,7 @@
 		$commentsPath = $PATH."comments";
 		if (is_dir($commentsPath)) {
 			$comments = scandir($commentsPath);
-			sort($comments);
+			arsort($comments);
 			echo "\r\n";
 			foreach ($comments as $comment) {
 				if (!in_array($comment, $SETTINGS['excludedNames'])) {

@@ -9,8 +9,7 @@
 	echo "</a></span>";
 	
 	echo "<span class='date'>";
-	$timeStamp = $PMETA['dateMilliseconds']/1000;
-	echo date("M jS Y", $timeStamp);
+	echo date("M jS Y", $PMETA['dateSeconds']);
 	echo "</span>";
 	
 	include $PATH."index";
