@@ -1,6 +1,4 @@
-<?php
-	chdir ('/var/www/mort/static/website/blogsoftware');
-	
+<?php	
 	$SETTINGS = parse_ini_file('settings.ini');
 	
 	$PAGE = $_GET[$SETTINGS['paramPage']];
