@@ -29,7 +29,7 @@
 					$pageSettings = parse_ini_file ($pageIni);
 					if ($pageSettings['list']) {
 						array_push ($sortArray, $pageSettings['sort']);
-						array_push ($linkArray, "<a href='?".$SETTINGS['paramPage']."=$page' class='$class'>$page</a>");
+						array_push ($linkArray, "<a href='?".$SETTINGS['paramPage']."=$page' class='$class'>".$pageSettings['name']."</a>");
 					}
 				}
 			}

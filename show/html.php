@@ -7,10 +7,16 @@
 		?>
 		</title>
 		<meta charset='UTF-8'>
-		<link rel='stylesheet' href='style/style.css'>
-		<link rel='stylesheet' href='style/head.css'>
-		<link rel='stylesheet' href='style/content.css'>
-		<link rel='stylesheet' href='style/comments.css'>
+		<?php
+			$themePath = $SETTINGS['themesDir'].$SETTINGS['theme']."/";
+			$stylesheets = scandir($themePath);
+			
+			foreach ($stylesheets as $stylesheet) {
+				if (!in_array($stylesheet, $SETTINGS['excludedNames'])) {
+					echo "<link rel='stylesheet' href='$themePath$stylesheet'>";
+				}
+			}
+		?>
 	</head>
 	<body>
 	<?php
