@@ -78,6 +78,7 @@
 
 #content .date {
 	color: #777;
+	display: block;
 }
 
 #content .postSeparator {

@@ -1,2 +1,4 @@
 This is a demo page. It also shows all posts:
-<php include "show/allposts.php"; ?>
+<?php
+	include "show/allposts.php";
+?>
