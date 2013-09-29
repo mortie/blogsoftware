@@ -85,6 +85,7 @@
 	font-weight: normal;
 	text-align: left;
 	color: #999;
+	margin: 40px 0px;
 }
 
 #content .postTitle a,
@@ -97,7 +98,6 @@
 	border-style: none;
 	font-size: 35px;
 	text-align: left;
-	margin-top: 40px;
 }
 #content .postTitle a:hover {
 	text-decoration: underline;
