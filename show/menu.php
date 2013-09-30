@@ -5,31 +5,31 @@
 		<span id='header'>
 			<a href='?'>
 			<?php
-				echo $SETTINGS['header']."\r\n";
+				echo $GLOBALS['settings']['header']."\r\n";
 			?>
 			</a>
 		</span>
 		<br>
 		<span id='links'>
 		<?php
-			$pages = scandir ($SETTINGS['pagesDir']);
+			$pages = scandir ($GLOBALS['settings']['pagesDir']);
 			$linkArray = array();
 			$sortArray = array();
 
 			foreach ($pages as $page) {
-				if (!in_array($page, $SETTINGS['excludedNames'])) {
+				if (!in_array($page, $GLOBALS['settings']['excludedNames'])) {
 
-					if ($PAGE == $page) {
+					if ($GLOBALS['page'] == $page) {
 						$class = "currentButton button";
 					} else {
 						$class = "button";
 					}
 
-					$pageIni = $SETTINGS['pagesDir'].$page."/meta.ini";
+					$pageIni = $GLOBALS['settings']['pagesDir'].$page."/meta.ini";
 					$pageSettings = parse_ini_file ($pageIni);
 					if ($pageSettings['list']) {
 						array_push ($sortArray, $pageSettings['sort']);
-						array_push ($linkArray, "<a href='?".$SETTINGS['paramPage']."=$page' class='$class'>".$pageSettings['name']."</a>");
+						array_push ($linkArray, "<a href='?".$GLOBALS['settings']['paramPage']."=$page' class='$class'>".$pageSettings['name']."</a>");
 					}
 				}
 			}

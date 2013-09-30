@@ -3,7 +3,7 @@
 <div id='content' class='section'>
 	<div class='container'>
 <?php
-	include "$PATH"."index";
+	include $GLOBALS['path']."index";
 ?>
 	</div>
 </div>

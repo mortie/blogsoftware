@@ -3,16 +3,16 @@
 	<head>
 		<title>
 		<?php
-			require "show/title.php";
+			show ("title.php");
 		?>
 		</title>
 		<meta charset='UTF-8'>
 		<?php
-			$themePath = $SETTINGS['themesDir'].$SETTINGS['theme']."/";
+			$themePath = $GLOBALS['settings']['themesDir'].$GLOBALS['settings']['theme']."/";
 			$stylesheets = scandir($themePath);
 			
 			foreach ($stylesheets as $stylesheet) {
-				if (!in_array($stylesheet, $SETTINGS['excludedNames'])) {
+				if (!in_array($stylesheet, $GLOBALS['settings']['excludedNames'])) {
 					echo "<link rel='stylesheet' href='$themePath$stylesheet'>";
 				}
 			}
@@ -20,17 +20,17 @@
 	</head>
 	<body>
 	<?php
-		require "show/menu.php";
+		show ("menu.php");
 	
-		if ($VIEW == "PAGE") {
-			require "show/page.php";
+		if ($GLOBALS['view'] == "PAGE") {
+			show ("page.php");
 		} else {
-			require "show/post.php";
+			show ("post.php");
 		}
 		
-		if ($PMETA['comments']) {
-			require "show/newcomment.php";
-			require "show/comments.php";
+		if ($GLOBALS['pMeta']['comments']) {
+			show ("newcomment.php");
+			show ("comments.php");
 		}
 	?>
 	</body>

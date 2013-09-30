@@ -1,21 +1,25 @@
 <?php	
-	$SETTINGS = parse_ini_file('settings.ini');
+	$settings = parse_ini_file('settings.ini');
 	
-	$PAGE = $_GET[$SETTINGS['paramPage']];
-	$POST = $_GET[$SETTINGS['paramPost']];
-	if (strlen($PAGE) == 0 && $POST == "") {
-		$PAGE = $SETTINGS['defaultPage'];
+	$page = $_GET[$settings['paramPage']];
+	$post = $_GET[$settings['paramPost']];
+	if (strlen($page) == 0 && $POST == "") {
+		$page = $settings['defaultPage'];
 	}
 	
-	if ($PAGE != "") {
-		$PATH = $SETTINGS['pagesDir'].$PAGE."/";
-		$VIEW = "PAGE";
-	} else if ($POST != "") {
-		$PATH = $SETTINGS['postsDir'].$POST."/";
-		$VIEW = "POST";
+	if ($page != "") {
+		$path = $settings['pagesDir'].$page."/";
+		$view = "PAGE";
+	} else if ($post != "") {
+		$path = $settings['postsDir'].$post."/";
+		$view = "POST";
 	}
 	
-	$PMETA = parse_ini_file($PATH."meta.ini");
+	$pMeta = parse_ini_file($path."meta.ini");
 	
-	require "show/html.php";
+	function show($file) {
+		include ($GLOBALS['settings']['showDir'].$file);
+	}
+	
+	show ("html.php");
 ?>

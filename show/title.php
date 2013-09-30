@@ -1,4 +1,4 @@
 
 <?php
-	echo $SETTINGS['title']."\r\n";
+	echo $GLOBALS['settings']['title']."\r\n";
 ?>
