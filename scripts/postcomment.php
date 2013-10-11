@@ -1,5 +1,6 @@
 <?php
 	chdir ('..');
+	include "api.php";
 	
 	//somewhat odd post variable names may help against spam. Trust me, it makes sense..
 	$page = $_POST['page'];
@@ -7,16 +8,13 @@
 	$name = $_POST['ggggnamos'];
 	$comment = $_POST['ffffcommentos'];
 	
-	$SETTINGS = parse_ini_file('settings.ini');
-	
 	if (!empty($page)) {
-		$PATH = $SETTINGS['pagesDir'].$page."/";
+		$PATH = $settings['content_dir']."pages/".$page."/";
 	} else if (!empty($post)) {
-		$PATH = $SETTINGS['postsDir'].$post."/";
+		$PATH = $settings['content_dir']."posts/".$post."/";
 	}
 	$PATH = $PATH."comments/";
 	
-	$old_umask = umask(0);
 	if (!is_dir($PATH)) {
 		mkdir($PATH, 0777, true);
 	}
@@ -24,7 +22,7 @@
 	$comments = [];
 	$dir = scandir($PATH);
 	foreach ($dir as $entry) {
-		if (!in_array($entry, $SETTINGS['excludedNames'])) {
+		if (!in_array($entry, $settings['excluded_names'])) {
 			array_push($comments, $entry);
 		}
 	}
@@ -41,8 +39,6 @@
 	fwrite($file, "name = ".htmlentities($name).PHP_EOL);
 	fwrite($file, "dateSeconds = ".time().PHP_EOL);
 	fclose($file);
-	
-	umask($old_umask);
 	
 	header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

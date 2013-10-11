@@ -8,7 +8,7 @@
 			arsort($comments);
 			echo "\r\n";
 			foreach ($comments as $comment) {
-				if (!in_array($comment, $GLOBALS['settings']['excludedNames'])) {
+				if (!in_array($comment, $GLOBALS['settings']['excluded_names'])) {
 					$cPath = $GLOBALS['path']."comments/".$comment."/";
 					$cSettings = parse_ini_file($cPath."meta.ini");
 					$content = file_get_contents($cPath."index");

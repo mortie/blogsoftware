@@ -12,24 +12,23 @@
 		<br>
 		<span id='links'>
 		<?php
-			$pages = scandir ($GLOBALS['settings']['pagesDir']);
+			$pages = scandir ($GLOBALS['settings']['content_dir']."pages/");
 			$linkArray = array();
 			$sortArray = array();
 
 			foreach ($pages as $page) {
-				if (!in_array($page, $GLOBALS['settings']['excludedNames'])) {
-
+				if (!in_array($page, $GLOBALS['settings']['excluded_names'])) {
 					if ($GLOBALS['page'] == $page) {
 						$class = "currentButton button";
 					} else {
 						$class = "button";
 					}
 
-					$pageIni = $GLOBALS['settings']['pagesDir'].$page."/meta.ini";
+					$pageIni = $GLOBALS['settings']['content_dir']."pages/".$page."/meta.ini";
 					$pageSettings = parse_ini_file ($pageIni);
 					if ($pageSettings['list']) {
 						array_push ($sortArray, $pageSettings['sort']);
-						array_push ($linkArray, "<a href='?".$GLOBALS['settings']['paramPage']."=$page' class='$class'>".$pageSettings['name']."</a>");
+						array_push ($linkArray, "<a href='?".$GLOBALS['settings']['param_page']."=$page' class='$class'>".$pageSettings['name']."</a>");
 					}
 				}
 			}

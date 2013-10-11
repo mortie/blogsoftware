@@ -8,11 +8,11 @@
 		</title>
 		<meta charset='UTF-8'>
 		<?php
-			$themePath = $GLOBALS['settings']['themesDir'].$GLOBALS['settings']['theme']."/";
+			$themePath = $GLOBALS['settings']['themes_dir'].$GLOBALS['settings']['theme']."/";
 			$stylesheets = scandir($themePath);
 			
 			foreach ($stylesheets as $stylesheet) {
-				if (!in_array($stylesheet, $GLOBALS['settings']['excludedNames'])) {
+				if (!in_array($stylesheet, $GLOBALS['settings']['excluded_names'])) {
 					echo "<link rel='stylesheet' href='$themePath$stylesheet'>";
 				}
 			}
@@ -33,5 +33,8 @@
 			show ("comments.php");
 		}
 	?>
+	<div class='footer'>
+		<a href='?admin=home'>Admin</a>
+	</div>
 	</body>
 </html>

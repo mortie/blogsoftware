@@ -1,0 +1,1 @@
+This is another post - with an image! <?php show("image.php", ["fooImg.png", "this is a sample image"]) ?>

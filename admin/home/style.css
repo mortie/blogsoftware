@@ -1,0 +1,67 @@
+body {
+	background-color: #F1F1F1;
+}
+
+#container {
+	display: block;
+	left: auto;
+	right: auto;
+	width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 25px;
+	
+	border-style: none;
+	border-radius: 2px;
+	box-shadow: 2px 3px 5px 2px #888;
+	background-color: #FFF;
+}
+
+.tr1 {
+	background-color: #EEE;
+}
+.tr2 {
+	background-color: #DDD;	
+}
+
+table {
+	margin-right: auto;
+	margin-left: auto;
+	border-collapse: collapse;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	
+	width: 100%;
+}
+table td {
+	padding: 5px;
+	padding-right: 10px;
+}
+table .key {
+	width: 30%;
+}
+table .value {
+	
+}
+
+button {
+	float: right;
+	width: 100px;
+	height: 30px;
+	border-radius: 20px;
+	border-style: solid;
+	border-color: #000;
+	
+	margin-top: 10px;
+	
+	box-shadow: 2px 3px 5px 2px #888;
+	
+	background-color: #DDD;
+}
+button:hover {
+	background-color: #CCC;
+}
+button:active {
+	background-color: #BBB;
+}

@@ -3,8 +3,8 @@
 <div id='content' class='section'>
 	<div class='container'>
 <?php
-	$param = "?".$GLOBALS['settings']['paramPost']."=".$POST;
-	echo "<span class='postTitle'><a href=\"$param\">";
+	$param = "?".$GLOBALS['settings']['param_post']."=".$GLOBALS['post'];
+	echo "<span class='postTitle'><a href='$param'>";
 	echo $GLOBALS['pMeta']['name'];
 	echo "</a></span>";
 	

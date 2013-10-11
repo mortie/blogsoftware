@@ -1,1 +1,4 @@
-This is a demo page!
+This is a demo page! And now it's changed.
+<?php
+	show("subscribe.php");
+?>

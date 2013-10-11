@@ -1,25 +1,34 @@
-<?php	
-	$settings = parse_ini_file('settings.ini');
-	
-	$page = $_GET[$settings['paramPage']];
-	$post = $_GET[$settings['paramPost']];
-	if (strlen($page) == 0 && $POST == "") {
-		$page = $settings['defaultPage'];
+<?php
+	include "api.php";
+
+	//stat counter stuff
+	function incrementFile($file) {
+		if (!file_exists($file)) {
+			fclose(fopen($file, "w"));
+		}
+		$count = file_get_contents($file);
+		if (empty($count)) {$count=0;};
+		
+		$fileHandler = fopen($file, "w");
+		fwrite($fileHandler, $count+1);
+		fclose($fileHandler);
 	}
 	
-	if ($page != "") {
-		$path = $settings['pagesDir'].$page."/";
-		$view = "PAGE";
-	} else if ($post != "") {
-		$path = $settings['postsDir'].$post."/";
-		$view = "POST";
+	//increment visits if user hasn't visited before
+	session_start();
+	if ($_SESSION['visited'] != true) {
+		incrementFile($settings['content_dir']."stats/visitors/total");
+		incrementFile($settings['content_dir']."stats/visitors/".date("m-j-Y", $timestamp));
+		$_SESSION['visited'] = true;
 	}
 	
-	$pMeta = parse_ini_file($path."meta.ini");
+	//increment visitors
+	incrementFile($settings['content_dir']."stats/visits/total");
+	incrementFile($settings['content_dir']."stats/visits/".date("m-j-Y", $timestamp));
 	
-	function show($file) {
-		include ($GLOBALS['settings']['showDir'].$file);
+	if ($view == "ADMIN") {
+		include ($path.'index.php');
+	} else {
+		show ("html.php");
 	}
-	
-	show ("html.php");
 ?>

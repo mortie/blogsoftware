@@ -27,3 +27,7 @@ body {
 	display: none;
 	visibility: hidden;
 }
+
+.footer {
+	text-align: center;
+}
