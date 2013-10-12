@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset='UTF-8'>
-	<link rel='stylesheet' <?php echo "href='".$GLOBALS['settings']['admin_dir']."style.css'" ?>>
+	<link rel='stylesheet' <?="href='".$GLOBALS['settings']['admin_dir']."style.css'" ?>>
 	<script <?php echo "src='".$GLOBALS['path']."script.js'" ?>></script>
 </head>
 <body onload='init()'>
@@ -48,6 +48,7 @@ if ($_GET['view'] == "post") {
 		<input class='hidden' name='comments' value='On'>
 		
 		<button>Submit</button>
+		<a href='?admin=home'><button type='button'>Home</button></a>
 		
 		<div id='preview'></div>
 	</form>

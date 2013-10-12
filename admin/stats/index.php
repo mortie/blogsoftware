@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset='UTF-8'>
-	<link rel='stylesheet' <?php echo "href='".$GLOBALS['settings']['admin_dir']."style.css'" ?>>
+	<link rel='stylesheet' <?="href='".$GLOBALS['settings']['admin_dir']."style.css'" ?>>
 </head>
 <body>
 	<div class='container'>
@@ -39,6 +39,7 @@
 		}
 		?>
 		</table>
+		<a href='?admin=home'><button type='button'>Home</button></a>
 	</div>
 </body>
 </html>

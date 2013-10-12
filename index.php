@@ -1,5 +1,6 @@
 <?php
 	include "api.php";
+	session_start();
 
 	//stat counter stuff
 	function incrementFile($file) {
@@ -15,7 +16,6 @@
 	}
 	
 	//increment visits if user hasn't visited before
-	session_start();
 	if ($_SESSION['visited'] != true) {
 		incrementFile($settings['content_dir']."stats/visitors/total");
 		incrementFile($settings['content_dir']."stats/visitors/".date("m-j-Y", $timestamp));
@@ -27,7 +27,11 @@
 	incrementFile($settings['content_dir']."stats/visits/".date("m-j-Y", $timestamp));
 	
 	if ($view == "ADMIN") {
-		include ($path.'index.php');
+		if ($_SESSION['isAdmin'] == true) {
+			include ($path.'index.php');
+		} else {
+			include ($settings[admin_dir].'login/index.php');
+		}
 	} else {
 		show ("html.php");
 	}

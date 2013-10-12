@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset='UTF-8'>
-	<link rel='stylesheet' <?php echo "href='".$GLOBALS['settings']['admin_dir']."style.css'" ?>>
+	<link rel='stylesheet' <?="href='".$GLOBALS['settings']['admin_dir']."style.css'" ?>>
 </head>
 <body>
 	<div class='container'>
@@ -9,7 +9,6 @@
 		<?php
 		$link = [];
 		$link['Settings'] = "?admin=settings";
-		$link['New post'] = "?admin=editor";
 		$link['Stats'] = "?admin=stats";
 		$link['Pages'] = "?admin=pages";
 		$link['Posts'] = "?admin=posts";
@@ -30,6 +29,7 @@
 		}
 		?>
 		</table>
+		<a href='?'><button type='button'>Back to site</button></a>
 	</div>
 </body>
 </html>

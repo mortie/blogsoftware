@@ -1,35 +1,18 @@
 <?php
 	chdir ('..');
 	
+	session_start();
 	include 'api.php';
 	
-	$view = $_POST['view'];
-	$slug = $_POST['slug'];
-	$content = $_POST['content'];
+	$pass = $_POST['pass'];
+	$uname = $_POST['uname'];
+	$passHash = md5($pass.$settings['admin_salt']);
 	
-	$comments = $_POST['comments'];
-	$list = $_POST['list'];
-	$title = $_POST['title'];
-	
-	if ($view == 'post') {
-		$dir = $settings['content_dir']."posts/".$slug.'/';
+	if (($passHash == $settings['admin_hash']) && ($uname == $settings['admin_username'])) {
+		$_SESSION['isAdmin'] = true;
 	} else {
-		$dir = $settings['content_dir']."pages/".$slug.'/';
+		$_SESSION['isAdmin'] = false;
 	}
 	
-	if (!isset($dir)) {
-		mkdir($dir, 0777);
-	}
-	
-	$file = fopen($dir.'index', "w");
-	fwrite($file, $content);
-	fclose($file);
-	
-	$file = fopen($dir.'meta.ini', "w");
-	fwrite($file, 'comments = '.$comments.PHP_EOL);
-	fwrite($file, 'list = '.$list.PHP_EOL);
-	fwrite($file, 'name = "'.$title.'"'.PHP_EOL);
-	fwrite($file, 'dateSeconds = '.time().PHP_EOL);	
-	fwrite($file, 'sort = '.'2'.PHP_EOL);
-	
+	header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

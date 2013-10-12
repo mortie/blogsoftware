@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset='UTF-8'>
-	<link rel='stylesheet' <?php echo "href='".$GLOBALS['settings']['admin_dir']."style.css'" ?>>
+	<link rel='stylesheet' <?="href='".$GLOBALS['settings']['admin_dir']."style.css'" ?>>
 </head>
 <body>
 	<form method='post' class='container' action='updateSettings.php'>
@@ -33,6 +33,8 @@
 			?>
 		</table>
 		<button>Submit</button>
+		<a href='?admin=home'><button type='button'>Home</button></a>
+		<a href='?admin=editor&view=page'><button type='button'>New page</button></a>
 	</form>
 </body>
 </html>
