@@ -8,6 +8,11 @@
 	$name = $_POST['ggggnamos'];
 	$comment = $_POST['ffffcommentos'];
 	
+	if (empty($name) || empty($post)) {
+		header('Location: ' . $_SERVER['HTTP_REFERER']);
+		die();
+	}
+	
 	if (!empty($page)) {
 		$PATH = $settings['content_dir']."pages/".$page."/";
 	} else if (!empty($post)) {

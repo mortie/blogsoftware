@@ -5,7 +5,8 @@
 	//stat counter stuff
 	function incrementFile($file) {
 		if (!file_exists($file)) {
-			fclose(fopen($file, "w"));
+			touch($file);
+			chmod($file, 0777);
 		}
 		$count = file_get_contents($file);
 		if (empty($count)) {$count=0;};

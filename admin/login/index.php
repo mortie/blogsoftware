@@ -13,7 +13,7 @@ if ($_SESSION['isAdmin'] == true) {
 	<div class='container'>
 		<form action='<?=$GLOBALS['settings']['scripts_dir']."admin_login.php" ?>' method='post'>
 			Username: <input name='uname'><br>
-			Password: <input name='pass'>
+			Password: <input type='password' name='pass'>
 			<button>Login</button>
 			<a href='?'><button type='button'>Back to site</button></a>
 		</form>

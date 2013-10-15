@@ -14,10 +14,6 @@
 	$comments = $_POST['comments'];
 	$list = $_POST['list'];
 	$title = $_POST['title'];
-	$sort = $_POST['sort'];
-	
-	if (!$list) {$list = "off";};
-	if (!$comments) {$comments = "off";};
 	
 	if ($view == 'post') {
 		$tDir = $settings['content_dir']."posts/";
@@ -34,6 +30,10 @@
 	chmod($dir."index", 0777);
 	fwrite($file, $content);
 	fclose($file);
+		
+	$files = scandir($tDir);
+	$files = array_diff($files, $settings['excluded_names']);
+	$sort = sizeof($files);
 	
 	$file = fopen($dir."meta.ini", "w");
 	fwrite($file, "comments = $comments".PHP_EOL);

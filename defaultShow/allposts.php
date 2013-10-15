@@ -15,30 +15,32 @@
 			$sortedPosts[$pMeta['sort']] = $post;
 		}
 	}
-
-	for ($i=sizeof($sortedPosts)-1; $i>=0; --$i) {
+	
+	for ($i=max(array_keys($sortedPosts)); $i>=0; --$i) {
 		$post = $sortedPosts[$i];
 		
-		$metaPath = $GLOBALS['settings']['content_dir']."posts/".$post."/meta.ini";
-		$pMeta = parse_ini_file($metaPath);
-		
-		if ($pMeta['list']) {
-			$param = "?".$GLOBALS['settings']['param_post']."=".$post;
-			echo "<span>";
-			echo "<span class='postTitle'><a href=\"$param\">";
-			echo $pMeta['name'];
-			echo "</a></span>";
+		if (isset($post)){
+			$metaPath = $GLOBALS['settings']['content_dir']."posts/".$post."/meta.ini";
+			$pMeta = parse_ini_file($metaPath);
 
-			echo "<span class='date'>";
-			echo date("M jS Y", $pMeta['dateSeconds']);
-			echo "</span>";
+			if ($pMeta['list']) {
+				$param = "?".$GLOBALS['settings']['param_post']."=".$post;
+				echo "<span>";
+				echo "<span class='postTitle'><a href=\"$param\">";
+				echo $pMeta['name'];
+				echo "</a></span>";
 
-			include $postsPath.$post."/index";
+				echo "<span class='date'>";
+				echo date("M jS Y", $pMeta['dateSeconds']);
+				echo "</span>";
 
-			if ($i!=0) {
-				echo "<hr class='postSeparator'>";
+				include $postsPath.$post."/index";
+
+				if ($i!=0) {
+					echo "<hr class='postSeparator'>";
+				}
+				echo "</span>";
 			}
-			echo "</span>";
 		}
 	}
 ?>

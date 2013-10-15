@@ -101,6 +101,10 @@ a:hover {
 	margin-bottom: 20px;
 }
 
+form {
+	display: inline;
+}
+
 #preview, #content {
 	width: 100%;
 	
@@ -124,6 +128,9 @@ a:hover {
 
 #preview p {
 	margin-top: 0.8em;
+}
+#preview {
+	margin-top: 15px;
 }
 
 #editor input[type=text] {

@@ -1,56 +1,73 @@
+<?php
+$slug = $_GET['slug'];
+
+if ($_GET['view'] == "post") {
+	$tDir = $GLOBALS['settings']['content_dir']."posts/";
+} else if (($_GET['view'] == "page")) {
+	$tDir = $GLOBALS['settings']['content_dir']."pages/";
+}
+
+if ($slug) {
+	$dir = $tDir.$_GET['slug'].'/';
+	$pMeta = parse_ini_file($dir.'meta.ini');
+	$sort = $pMeta['sort'];
+} else {
+	$files = scandir($tDir);
+	$files = array_diff($files, $GLOBALS['settings']['excluded_names']);
+	$sort = sizeof($files);
+}
+?>
+
 <html>
 <head>
 	<meta charset='UTF-8'>
-	<link rel='stylesheet' <?="href='".$GLOBALS['settings']['admin_dir']."style.css'" ?>>
-	<script <?php echo "src='".$GLOBALS['path']."script.js'" ?>></script>
+	<link rel='stylesheet' href='<?= $GLOBALS['settings']['admin_dir']."style.css" ?>'>
+	<script src='<?= $GLOBALS['path']."script.js'" ?>'></script>
 </head>
 <body onload='init()'>
-	<form method='post' id='editor' class='container' action='<?php echo $GLOBALS['settings']['scripts_dir']."newpost.php"?>'>
+	<div id='editor' class='container'>
+		<form method='post' action='<?= $GLOBALS['settings']['scripts_dir']."admin_newpost.php"?>'>
 	
-		<label class='editorLabel' id='titleLabel'>Title</label>
+			<label class='editorLabel' id='titleLabel'>Title</label>
 		 
-		<input oninput='updateSlug(this)' name='title' type='text' value='<?php 
-if ($_GET['view'] == "post") {
-	$dir = $GLOBALS['settings']['content_dir']."posts/".$_GET['slug'].'/';
-	$pMeta = parse_ini_file($dir.'meta.ini');
-} else if ($_GET['view'] == "page") {
-	$dir = $GLOBALS['settings']['content_dir']."pages/".$_GET['slug'].'/';
-	$pMeta = parse_ini_file($dir.'meta.ini');
+			<input oninput='updateSlug(this)' name='title' type='text' value='<?php 
+if ($slug) {
+	echo $pMeta['name'];
 }
-echo $pMeta['name'];
 ?>'>
 	
-		<label class='editorLabel' id='slugLabel'>Slug</label>
-		<input id='slug' name='slug' type='text' value='<?php echo $_GET['slug'] ?>'>
-		<label><input type='checkbox' id='slugAutoUpdate' <?php if (!$_GET['view']){echo "checked";} ?>>Automatically update slug</label>
+			<label class='editorLabel' id='slugLabel'>Slug</label>
+			<input id='slug' name='slug' type='text' value='<?= $_GET['slug'] ?>'>
+			<label><input type='checkbox' id='slugAutoUpdate'<?php if (!$slug){echo " checked";}?>>Automatically update slug</label>
 	
-		<label class='editorLabel' id='contentLabel'>Content</label>
+			<label class='editorLabel' id='contentLabel'>Content</label>
 <textarea oninput='updatePreview(this.id)' id='content' name='content' type='text'>
 <?php
-if ($_GET['view'] == "post") {
-	$dir = $GLOBALS['settings']['content_dir']."posts/".$_GET['slug'].'/';
-	echo file_get_contents($dir.'index');
-} else if (($_GET['view'] == "page")) {
-	$dir = $GLOBALS['settings']['content_dir']."pages/".$_GET['slug'].'/';
+if ($slug) {
 	echo file_get_contents($dir.'index');
 }
-
 ?>
 </textarea>
-	<?php if (isset($_GET['view'])) {
-		echo "<input class='hidden' name='view' value='".$_GET['view']."'>";
-	} else {
-		echo "<label><input type='radio' name='view' value='page' checked>Page</label><br>".PHP_EOL;
-		echo "<label><input type='radio' name='view' value='post'>Post</label><br>".PHP_EOL;
-	} ?>
+			<?php if (isset($_GET['view'])) {
+				echo "<input class='hidden' name='view' value='".$_GET['view']."'>";
+			} else {
+				echo "<label><input type='radio' name='view' value='page' checked>Page</label><br>".PHP_EOL;
+				echo "<label><input type='radio' name='view' value='post'>Post</label><br>".PHP_EOL;
+			} ?>
 		
-		<input class='hidden' name='list' value='On'>
-		<input class='hidden' name='comments' value='On'>
+			<label>Display: <input type='checkbox' name='list'<?php if ($pMeta['list']){echo " checked";}?>></label><br>
+			<label>Comments: <input type='checkbox' name='comments'<?php if ($pMeta['comments']){echo " checked";}?>></label><br>
+			<label>Sort: <input type="number" name='sort' value='<?= $sort ?>'></label><br>
 		
-		<button>Submit</button>
-		<a href='?admin=home'><button type='button'>Home</button></a>
-		
+			<button>Submit</button>
+			<a href='?admin=home'><button type='button'>Home</button></a>
+		</form>
+		<form method='post' action='<?= $GLOBALS['settings']['scripts_dir']."admin_delpost.php"?>'>
+			<input class='hidden' name='slug' value='<?= $_GET['slug'] ?>'>
+			<input class='hidden' name='view' value='<?= $_GET['view'] ?>'>
+			<button>Delete</button>
+		</form>
 		<div id='preview'></div>
-	</form>
+	</div>
 </body>
 </html>

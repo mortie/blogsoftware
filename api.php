@@ -1,4 +1,5 @@
 <?php
+	umask(000);
 	$settings = [];
 	$settings = array_merge($settings, parse_ini_file('settings.ini'), parse_ini_file('userSettings.ini'));
 	date_default_timezone_set($settings['time_zone']);

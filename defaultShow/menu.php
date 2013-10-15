@@ -13,33 +13,33 @@
 		<span id='links'>
 		<?php
 			$pages = scandir ($GLOBALS['settings']['content_dir']."pages/");
-			$linkArray = array();
-			$sortArray = array();
 
+			$sortedPages = array();
 			foreach ($pages as $page) {
 				if (!in_array($page, $GLOBALS['settings']['excluded_names'])) {
-					if ($GLOBALS['page'] == $page) {
-						$class = "currentButton button";
-					} else {
-						$class = "button";
-					}
+					$metaPath = $GLOBALS['settings']['content_dir']."pages/".$page."/meta.ini";
+					$pMeta = parse_ini_file($metaPath);
 
-					$pageIni = $GLOBALS['settings']['content_dir']."pages/".$page."/meta.ini";
-					$pageSettings = parse_ini_file ($pageIni);
-					if ($pageSettings['list']) {
-						array_push ($sortArray, $pageSettings['sort']);
-						array_push ($linkArray, "<a href='?".$GLOBALS['settings']['param_page']."=$page' class='$class'>".$pageSettings['name']."</a>");
-					}
+					$sortedPages[$pMeta['sort']] = $page;
 				}
 			}
 			
-			$sorted = array();
-			foreach ($sortArray as $item) {
-				$sorted[] = $linkArray[$item];
-			}
-
-			foreach ($sorted as $link) {
-				echo $link;
+			for ($i=0; $i<=max(array_keys($sortedPages)); ++$i) {
+				$page = $sortedPages[$i];
+				
+				if (isset($page)) {			
+					$metaPath = $GLOBALS['settings']['content_dir']."pages/".$page."/meta.ini";
+					$pMeta = parse_ini_file($metaPath);
+					if ($pMeta['list']) {
+						if ($GLOBALS['page'] == $page) {
+							$class = "currentButton button";
+						} else {
+							$class = "button";
+						}
+						
+						echo "<a href='?".$GLOBALS['settings']['param_page']."=$page' class='$class'>".$pMeta['name']."</a>";
+					}
+				}
 			}
 			echo "\r\n";
 		?>
