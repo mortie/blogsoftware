@@ -8,16 +8,32 @@
 	$name = $_POST['ggggnamos'];
 	$comment = $_POST['ffffcommentos'];
 	
+	if (!empty($page)) {
+		$slug = $page;
+	} else if (!empty($post)) {
+		$slug = $post;
+	}
+	
 	if (empty($name) || empty($post)) {
 		header('Location: ' . $_SERVER['HTTP_REFERER']);
 		die();
 	}
 	
-	if (!empty($page)) {
-		$PATH = $settings['content_dir']."pages/".$page."/";
-	} else if (!empty($post)) {
-		$PATH = $settings['content_dir']."posts/".$post."/";
+	$preg = '/[^A-Za-z0-9_]+/';
+	if (preg_match($preg, $slug)) {
+		die('Bad slug. Contact the webmaster.');
 	}
+	
+	if (!empty($page)) {
+		$PATH = $settings['content_dir']."pages/".$slug."/";
+	} else if (!empty($post)) {
+		$PATH = $settings['content_dir']."posts/".$slug."/";
+	}
+	
+	if (!is_dir($PATH)) {
+		die('Bad slug. Contact the webmaster.');
+	}
+	
 	$PATH = $PATH."comments/";
 	
 	if (!is_dir($PATH)) {

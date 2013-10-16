@@ -25,7 +25,7 @@
 
 			if ($pMeta['list']) {
 				$param = "?".$GLOBALS['settings']['param_post']."=".$post;
-				echo "<span>";
+				echo "<div>";
 				echo "<span class='postTitle'><a href=\"$param\">";
 				echo $pMeta['name'];
 				echo "</a></span>";
@@ -39,7 +39,7 @@
 				if ($i!=0) {
 					echo "<hr class='postSeparator'>";
 				}
-				echo "</span>";
+				echo "</div>";
 			}
 		}
 	}

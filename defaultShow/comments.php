@@ -1,11 +1,11 @@
 
 <!--start of comments.php-->
-<?
+<?php
 	$commentsPath = $GLOBALS['path']."comments";
 	if (is_dir($commentsPath)) {?>
 <div id='comments' class='section'>
 	<div class='container'>
-	<?
+	<?php
 		$comments = scandir($commentsPath);
 		arsort($comments);
 		echo "\r\n";
@@ -21,7 +21,7 @@
 			}
 		}?>
 	</div>
-</div><?
+</div><?php
 	}
 	?>
 <!--end of comments.php-->

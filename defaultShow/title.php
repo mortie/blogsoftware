@@ -1,4 +1,4 @@
 
 <?php
-	echo $GLOBALS['settings']['title']." - ".$GLOBALS['post'].$GLOBALS['page']."\r\n";
+	echo $GLOBALS['settings']['title']." - ".$GLOBALS['pMeta']['name']."\r\n";
 ?>
