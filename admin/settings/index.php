@@ -16,10 +16,10 @@
 					$trClass = "tr2";
 				}
 				$prettifiedKey = str_replace("_", " ", $key);
-				
+								
  				echo "<tr class='$trClass'>";
 				echo "<td class='key'>".$prettifiedKey."</td>";
-				echo "<td class='value'><input class='settingInput' name='$key' value='$value'></td>";
+				echo "<td class='value'><input class='settingInput' name='$key' value=".'"'.$value.'"'."></td>";
 				echo "</tr>".PHP_EOL;
 				
 				$alternate = !$alternate;

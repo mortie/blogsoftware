@@ -61,5 +61,9 @@
 	fwrite($file, "dateSeconds = ".time().PHP_EOL);
 	fclose($file);
 	
+	$headers = 'From: '.$settings['email_from']."\r\n";
+	$headers .= 'Reply-To: '.$settings['email_reply_to']."\r\n";
+	mail($settings['admin_email'], "New comment from $name", "comment on $slug: ".htmlentities($comment), $headers);
+	
 	header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
