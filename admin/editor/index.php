@@ -61,6 +61,10 @@ if ($slug) {
 		
 			<button>Submit</button>
 			<a href='?admin=home'><button type='button'>Home</button></a>
+			<?php
+				if ($slug) {?>
+					<a href='?<?=$_GET['view']."=$slug"?>'><button type='button'>View <?=$_GET['view']?></button></a>
+			<?php } ?>
 		</form>
 		<form method='post' action='<?= $GLOBALS['settings']['scripts_dir']."admin_delpost.php"?>'>
 			<input class='hidden' name='slug' value='<?= $_GET['slug'] ?>'>

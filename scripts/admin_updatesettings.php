@@ -7,41 +7,12 @@
 	
 	include 'api.php';
 	
-	$view = $_POST['view'];
-	$slug = $_POST['slug'];
-	$content = $_POST['content'];
-	
-	$comments = $_POST['comments'];
-	$list = $_POST['list'];
-	$title = $_POST['title'];
-	
-	if ($view == 'post') {
-		$tDir = $settings['content_dir']."posts/";
-	} else {
-		$tDir = $settings['content_dir']."pages/";
+	$file = fopen("userSettings.ini", "w");
+	foreach ($_POST as $key=>$value) {
+		$value = str_replace('"', '\"', $value);
+		fwrite($file, $key.'="'.$value.'"'.PHP_EOL);
 	}
-	$dir = $tDir.$slug.'/';
-	
-	if (!is_dir($dir)) {
-		mkdir($dir, 0777);
-	}
-	
-	$file = fopen($dir."index", "w");
-	chmod($dir."index", 0777);
-	fwrite($file, $content);
-	fclose($file);
-		
-	$files = scandir($tDir);
-	$files = array_diff($files, $settings['excluded_names']);
-	$sort = sizeof($files);
-	
-	$file = fopen($dir."meta.ini", "w");
-	fwrite($file, "comments = $comments".PHP_EOL);
-	fwrite($file, "list = $list".PHP_EOL);
-	fwrite($file, "name = \"$title\"".PHP_EOL);
-	fwrite($file, 'dateSeconds = '.time().PHP_EOL);	
-	fwrite($file, "sort = $sort".PHP_EOL);
 	fclose($file);
 	
-	header('Location: '.$_SERVER['HTTP_REFERER']);
+	header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

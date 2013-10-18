@@ -4,7 +4,7 @@
 	<link rel='stylesheet' <?="href='".$GLOBALS['settings']['admin_dir']."style.css'" ?>>
 </head>
 <body>
-	<form method='post' class='container' action='updateSettings.php'>
+	<form method='post' class='container' action='<?= $GLOBALS['settings']['scripts_dir']."admin_updatesettings.php" ?>'>
 		<table id='settings'>
 			<?php
 			echo PHP_EOL;
