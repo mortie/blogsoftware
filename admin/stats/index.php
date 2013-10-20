@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset='UTF-8'>
-	<link rel='stylesheet' <?="href='".$GLOBALS['settings']['admin_dir']."style.css'" ?>>
+	<link rel='stylesheet' href='<?=$GLOBALS['settings']['admin_dir']."style.css" ?>'>
 </head>
 <body>
 	<div class='container'>
@@ -39,7 +39,16 @@
 		}
 		?>
 		</table>
+		
+		<p>Visitors and visits last 10 days:
+		<canvas class='chart' id='visitDataChart' width='650px' height='600px'></canvas></p>
+		
+		
 		<a href='?admin=home'><button type='button'>Home</button></a>
 	</div>
+	<script src='<?=$GLOBALS['path']."Chart.min.js" ?>'></script>
+	<script>
+		<?php include $GLOBALS['path']."jscript.php" ?>		
+	</script>
 </body>
 </html>
