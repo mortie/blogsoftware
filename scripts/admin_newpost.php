@@ -43,5 +43,5 @@
 	fwrite($file, "sort = $sort".PHP_EOL);
 	fclose($file);
 	
-	header('Location: '.$_SERVER['HTTP_REFERER']);
+	header('Location: '.$_SERVER['HTTP_REFERER']."&slug=$slug");
 ?>
