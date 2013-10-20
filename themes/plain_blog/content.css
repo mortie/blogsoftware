@@ -1,6 +1,8 @@
 #content {
-	text-align: justify;
-	font-size: 18px;
+	text-align: left;
+	font-size: 16px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
 
 #content .container {
@@ -12,7 +14,7 @@
 #content table {
 	margin-right: auto;
 	margin-left: auto;
-	font-size: 20px;
+	font-size: 16px;
 	border-collapse: collapse;
 }
 
@@ -38,7 +40,7 @@
 	color: #777;
 	text-decoration: none;
 	border-bottom-style: solid;
-	border-bottom-color: #000;
+	border-bottom-color: #777;
 	border-bottom-width: 1px;
 }
 #content a:hover {
@@ -67,7 +69,7 @@
 	border-radius: 5px;
 	border-style: none;
 	
-	box-shadow: 2px 3px 5px 2px #888;
+	box-shadow: 1px 1px 2px 0px #888;
 }
 
 #content blockquote p {
@@ -109,4 +111,6 @@
 	text-align: left;
 	color: #000;
 	font-size: 20px;
+	margin-bottom: -10px;
+	margin-top: 20px;
 }

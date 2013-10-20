@@ -13,8 +13,7 @@
 	color: #999;
 	cursor: auto;
 	display: inline-block;
-	font-family: Georgia, serif;
-	font-size: 56px;
+	font-size: 50px;
 	height: auto;
 	line-height: 20px;
 	
@@ -56,7 +55,6 @@
 #menu .button {
 	color: #999;
 	display: inline-block;
-	font-family: Verdana, Tahoma, Arial, serif;
 	font-size: 20px;
 	height: 27px;
 	margin-top: 0px;
