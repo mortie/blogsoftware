@@ -13,7 +13,7 @@
 	
 	$comments = $_POST['comments'];
 	$list = $_POST['list'];
-	$title = $_POST['title'];
+	$title = htmlentities($_POST['title']);
 	$sort = $_POST['sort'];
 	
 	if (!$list) {$list = "off";};

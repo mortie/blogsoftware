@@ -30,11 +30,11 @@ if ($slug) {
 	
 			<label class='editorLabel' id='titleLabel'>Title</label>
 		 
-			<input oninput='updateSlug(this)' name='title' type='text' value='<?php 
+			<input oninput='updateSlug(this)' name='title' type='text' value="<?php 
 if ($slug) {
 	echo $pMeta['name'];
 }
-?>'>
+?>">
 	
 			<label class='editorLabel' id='slugLabel'>Slug</label>
 			<input id='slug' name='slug' type='text' value='<?= $_GET['slug'] ?>'>
