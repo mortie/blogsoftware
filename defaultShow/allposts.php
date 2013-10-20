@@ -35,7 +35,9 @@
 				echo "</span>";
 
 				include $postsPath.$post."/index";
-
+				
+				echo "<a href='$param#comments'>Comments</a>";
+				
 				if ($i!=0) {
 					echo "<hr class='postSeparator'>";
 				}

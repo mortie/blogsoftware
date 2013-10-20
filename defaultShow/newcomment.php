@@ -16,4 +16,9 @@
 		</form>
 	</div>
 </div>
+<script>
+	if (window.location.hash == "#comments") {
+		document.getElementById("newComment").scrollIntoView();
+	}
+</script>
 <!--end of newcomment.php-->
