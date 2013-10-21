@@ -18,7 +18,13 @@
 	
 	function updateRefs() {
 		if (!empty($_SERVER['HTTP_REFERER']) && !preg_match('/'.$_SERVER['HTTP_HOST'].'/', $_SERVER['HTTP_REFERER'])) { 
-			$file = $GLOBALS['settings']['content_dir']."stats/refs/total";
+			$dir = $GLOBALS['settings']['content_dir']."stats/refs/";
+			$file = $dir."total";
+			
+			if (!is_dir($dir)) {
+				mkdir($dir);
+			}
+			
 			if (!file_exists($file)) {
 				touch($file);
 				chmod($file, 0777);
@@ -39,8 +45,6 @@
 				}
 			}
 			fclose($fHandle);
-	
-			print_r($fContent);
 		}
 	}
 	
