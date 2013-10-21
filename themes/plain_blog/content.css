@@ -1,8 +1,9 @@
 #content {
 	text-align: left;
-	font-size: 13pt;
+	font-size: 11pt;
 	padding-top: 30px;
 	padding-bottom: 30px;
+    font-family: Verdana, sans-serif; 
 }
 
 #content .container {
@@ -101,6 +102,7 @@
 	border-style: none;
 	font-size: 35px;
 	text-align: left;
+    font-family: "Century Gothic", sans-serif;
 }
 #content .postTitle a:hover {
 	text-decoration: underline;

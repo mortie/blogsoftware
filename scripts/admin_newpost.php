@@ -36,11 +36,18 @@
 	fwrite($file, $content);
 	fclose($file);
 	
+	if (file_exists($dir."meta.ini")) {
+		$pMeta = parse_ini_file($dir."meta.ini");
+		$date = $pMeta['dateSeconds'];
+	} else {
+		$date = time();
+	}
+	
 	$file = fopen($dir."meta.ini", "w");
 	fwrite($file, "comments = $comments".PHP_EOL);
 	fwrite($file, "list = $list".PHP_EOL);
 	fwrite($file, "name = \"$title\"".PHP_EOL);
-	fwrite($file, 'dateSeconds = '.time().PHP_EOL);	
+	fwrite($file, "dateSeconds = $date".PHP_EOL);	
 	fwrite($file, "sort = $sort".PHP_EOL);
 	fclose($file);
 	
