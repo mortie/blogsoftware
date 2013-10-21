@@ -36,7 +36,7 @@ if ($slug) {
 }
 ?>">
 	
-			<label class='editorLabel' id='slugLabel'>Slug</label>
+			<label class='editorLabel' id='slugLabel'>Slug - example.com/?<?=$_GET['view'] ?>=[slug]</label>
 			<input id='slug' name='slug' type='text' value='<?= $_GET['slug'] ?>'>
 			<label><input type='checkbox' id='slugAutoUpdate'<?php if (!$slug){echo " checked";}?>>Automatically update slug</label>
 	
@@ -59,6 +59,8 @@ if ($slug) {
 			<label>Comments: <input type='checkbox' name='comments'<?php if ($pMeta['comments']){echo " checked";}?>></label><br>
 			<label>Sort: <input type="number" name='sort' value='<?= $sort ?>'></label><br>
 		
+			<input name='oldSlug' class='hidden' value='<?= $_GET['slug'] ?>'>
+			
 			<button>Submit</button>
 			<a href='?admin=home'><button type='button'>Home</button></a>
 			<?php

@@ -27,8 +27,6 @@ function updatePreview (id) {
 	str = replaceAll('<?php', "(this is a server side script)<div class='hidden'>", str);
 	str = replaceAll('?>', "</div>", str);
 	
-	str += "_";
-	
 	document.getElementById('preview').innerHTML = str;
 }
 

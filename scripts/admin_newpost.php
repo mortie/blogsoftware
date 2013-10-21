@@ -9,6 +9,7 @@
 	
 	$view = $_POST['view'];
 	$slug = $_POST['slug'];
+	$oldSlug = $_POST['oldSlug'];
 	$content = $_POST['content'];
 	
 	$comments = $_POST['comments'];
@@ -42,6 +43,19 @@
 	fwrite($file, 'dateSeconds = '.time().PHP_EOL);	
 	fwrite($file, "sort = $sort".PHP_EOL);
 	fclose($file);
+	
+	if ($slug != $oldSlug) {
+		$delDir = $tDir.$oldSlug;
+	    $folder_handler = dir($delDir);
+	    while ($file = $folder_handler->read()) {
+	        if ($file == "." || $file == "..")
+	            continue;
+	        unlink($delDir.'/'.$file);
+
+	    }
+	   $folder_handler->close();
+	   rmdir($delDir);
+   }
 	
 	header('Location: '.$_SERVER['HTTP_REFERER']."&slug=$slug");
 ?>
