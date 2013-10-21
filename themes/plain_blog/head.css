@@ -1,5 +1,4 @@
 #menu {
-	text-align: center;
 	font-size: 20px;
 }
 
@@ -30,19 +29,23 @@
 	width: auto;
 }
 
-#menu #header {
+#menu #header .text {
 	width: 100%;
 	display: inline-block;
 	text-align: left;
 }
-#menu #header a {
+#menu #header .text a {
 	color: #999;
 }
-#menu #header a:hover {
+#menu #header .text a:hover {
 	color: #777;
 }
-#menu #header a:active {
+#menu #header .text a:active {
 	color: #000;
+}
+
+#menu #header .image {
+	width: 100%;
 }
 
 #menu #links {

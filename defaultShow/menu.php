@@ -5,7 +5,11 @@
 		<span id='header'>
 			<a href='?'>
 			<?php
-				echo $GLOBALS['settings']['header']."\r\n";
+				if ($GLOBALS['settings']['header_type'] == "text") {
+					echo "<span class='text'>".$GLOBALS['settings']['header_text']."</span>\r\n";
+				} else if ($GLOBALS['settings']['header_type'] == "image") {
+					echo "<img class='image' src='".$GLOBALS['settings']['content_dir']."media/".$GLOBALS['settings']['header_image']."'>";
+				}
 			?>
 			</a>
 		</span>

@@ -43,6 +43,33 @@
 		<p>Visitors and visits last 10 days:
 		<canvas class='chart' id='visitDataChart' width='650px' height='600px'></canvas></p>
 		
+		Referrers:
+		<table>
+		<?php
+		$file = $GLOBALS['settings']['content_dir']."stats/refs/total";
+		$refsRaw = explode("\r\n", tryRead($file));
+		foreach ($refsRaw as $entry) {
+			list($k, $v) = explode(' ', $entry);
+			$refs[ $k ] = $v;
+		}
+		arsort($refs);
+		
+		$alternate = false;
+		foreach ($refs as $key=>$value) {
+			if ($alternate) {
+				$trClass = "tr1";
+			} else {
+				$trClass = "tr2";
+			}
+	
+			echo "<tr class='$trClass'>";
+			echo "<td class='key'>$value</td><td class='value'><a href='$key'>$key</a></td>";
+			echo "</tr>".PHP_EOL;
+	
+			$alternate = !$alternate;
+		}
+		?>
+		</table>
 		
 		<a href='?admin=home'><button type='button'>Home</button></a>
 	</div>
