@@ -40,7 +40,7 @@
 		?>
 		</table>
 		
-		<p>Visitors and visits last 10 days:
+		<p>Visitors and visits last <?=$GLOBALS['settings']['stats_history_days']?> days:
 		<canvas class='chart' id='visitDataChart' width='650px' height='600px'></canvas></p>
 		
 		Referrers:

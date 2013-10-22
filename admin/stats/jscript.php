@@ -1,6 +1,6 @@
 <?php
 	$secondsInDay = 86400;
-	$daysToShow = 10;
+	$daysToShow = $GLOBALS['settings']['stats_history_days'];
 	$highestValue = 0;
 	
 	function echoFiles($dirName) {
@@ -32,7 +32,7 @@
 		global $highestValue;
 		global $stepCount;
 		
-		return round($highestValue/$stepCount);
+		return round($highestValue/$stepCount)*1.1;
 	}
 ?>
 
