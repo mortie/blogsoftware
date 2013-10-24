@@ -13,6 +13,7 @@
 		$link['Pages'] = "?admin=pages";
 		$link['Posts'] = "?admin=posts";
 		$link['Media'] = "?admin=media";
+		$link['Update'] = "?admin=update";
 	
 		$alternate = false;
 		foreach ($link as $key=>$value) {
