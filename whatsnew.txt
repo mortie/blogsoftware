@@ -1,2 +1,2 @@
-1.01
-Slight changes to the update interface
+1.04
+Settings in the settings page is now ordered alphabetically.

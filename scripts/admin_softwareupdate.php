@@ -82,8 +82,10 @@
 	}
 	
 	$oldSettings = parse_ini_file("userSettings.ini");
-	$newSettings = array_diff(parse_ini_file("temp/src/userSettings.ini"), $oldSettings);
+	$newSettings = array_diff_key(parse_ini_file("temp/src/userSettings.ini"), $oldSettings);
 	$finalSettings = array_merge($oldSettings, $newSettings);
+	
+	print_r($newSettings);
 		
 	$file = fopen("userSettings.ini", "w");
 	foreach ($finalSettings as $key=>$value) {

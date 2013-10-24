@@ -8,8 +8,11 @@
 		<table id='settings'>
 			<?php
 			echo PHP_EOL;
+			$settings = parse_ini_file('userSettings.ini');
+			ksort($settings);
+			
 			$alternate = false;
-			foreach (parse_ini_file('userSettings.ini') as $key=>$value) {
+			foreach ($settings as $key=>$value) {
 				if ($alternate) {
 					$trClass = "tr1";
 				} else {

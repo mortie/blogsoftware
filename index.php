@@ -1,5 +1,8 @@
 <?php
 	include "api.php";
+	if (file_exists($settings['external_include_file'])) {
+		include $settings['external_include_file'];
+	}
 	session_start();
 
 	//stat counter stuff
